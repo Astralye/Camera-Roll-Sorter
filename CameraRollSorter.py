@@ -112,7 +112,11 @@ def existEXIFdata(path):
 def getFileDate(fileName, fileNameFull):
     # variable initializer
     fileDate = None
-    fileExtension = fileName[-3:].lower()
+    # location of extension, from the end.
+    indexdot = fileName.rindex('.') - len(fileName) + 1
+    fileExtension = fileName[indexdot:].lower()
+
+    if(printable): print(f"File Extension      : {fileExtension}")    
     containsEXIFdata = existEXIFdata(fileNameFull)
     
     # png, jpg, heic CAN contain EXIF data
