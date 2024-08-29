@@ -123,7 +123,7 @@ def getFileDate(fileName, fileNameFull):
     # If exist, use those, if not, use oldest file modification / creation date
     
     if(printable): print(f"Image      : {fileName}")
-    if fileExtension == "png" or fileExtension == "jpg" or fileExtension == "heic":
+    if fileExtension == "png" or fileExtension == "jpg" or fileExtension == "heic" or fileExtension == "mov":
         if containsEXIFdata:
             if(printable): print("EXIF data? : Yes")
             date = getEXIFdata(fileNameFull)
